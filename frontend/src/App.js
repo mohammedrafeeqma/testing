@@ -1,17 +1,53 @@
 import { BrowserRouter, BrowserRouter as Router, Route, Routes } from "react-router-dom";
-// import Login from './pages/user/Login'
-// import Home from './pages/user/Home'
+import Login from './pages/user/Login'
+import Home from './pages/user/Home'
 import Sample from "./components/Sample";
 
 
 function App() {
   return (
 
-    <BrowserRouter>
-    <Routes>
-      <Route path='/' element={<Sample/>} />
-    </Routes>
-    </BrowserRouter>
+    
+
+<Router>
+{/* <Routes>
+  <Route  path='/' element={<Login/>}/>
+  <Route  path='/:id' element={<Home/>}/>
+  <Route path='/login' element={<Login/>}/>
+</Routes> */}
+<Routes>        
+  <Route path="/">
+
+    <Route index element={<Login />} />
+    <Route path=":id" element={<Home />} />
+    <Route path=":id/:favourite" element={<Home />} />
+    <Route path="login" element={<Login />} />
+    {/* <Route path="/profile/:username" element={<Profile />} />
+    <Route path='/search/:searchkey' element={<SearchUser/>} />
+    <Route path="/friends" element={<Friends/>} />
+    <Route path="/friends/:discovery" element={<Friends/>} />
+    <Route path="/friends/:sugested" element={<Friends/>} />
+    <Route path="/chat" element={<Chat/>} />
+    <Route path="/events/:nearby" element={<Events/>} />
+    <Route path="/createevents" element={<CreateEvent/>} />
+    <Route path="/404" element={<NotFound/>} /> */}
+
+    <Route path="/sample" element={<Sample/>} />
+  </Route>
+  
+
+  {/* admin */}
+
+  {/* <Route path="/admin">
+    <Route index element={<AdminLogin />} />
+    <Route path=":reports" element={<AdminUsers/>} />
+  </Route> */}
+
+
+  
+  
+</Routes>
+</Router>
   );
 }
 
